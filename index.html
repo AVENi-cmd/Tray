@@ -1,70 +1,1014 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أثير | متجر سبح البكلايت الفاخرة</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-page: #F8F8F6;
-            --card-bg: #FFFFFF;
-            --text-main: #141414;
-            --text-muted: #737373;
-            --gold-accent: #C5A880;
-            --border-light: rgba(0, 0, 0, 0.06);
-            --radius-main: 16px;
-            --shadow-soft: 0 10px 30px -8px rgba(0, 0, 0, 0.04);
-            --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
-            --primary-black: #141414;
-            --primary-hover: #262626;
-            --success-green: #10B981;
-        }
+  <meta charset="UTF-8">
+  <!-- وسم التجاوب لضبط حجم الصفحة على الجوال والشاشات المختلفة -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>أثير | سبح بكلايت فاخرة</title>
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Tajawal', sans-serif; }
-        body { background-color: var(--bg-page); color: var(--text-main); overflow-x: hidden; line-height: 1.6; }
+  <!-- خطوط جوجل: تجوال وأميري -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,700;1,400&family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 
-        .top-ticker { background: #141414; color: #FAF5EE; overflow: hidden; padding: 9px 0; font-size: 13px; font-weight: 500; border-bottom: 1px solid rgba(197, 168, 128, 0.2); }
-        .ticker-track { display: flex; width: max-content; animation: marquee 28s linear infinite; }
-        .ticker-item { padding: 0 30px; display: flex; align-items: center; gap: 10px; }
-        .ticker-bullet { color: var(--gold-accent); }
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(50%); } }
+  <style>
+    :root {
+      --bg-page: #F8F8F6;
+      --card-bg: #FFFFFF;
+      --text-main: #181818;
+      --text-muted: #757575;
+      --gold-accent: #C5A880;
+      --gold-hover: #B39266;
+      --border-light: rgba(0, 0, 0, 0.05);
+      --radius-main: 18px;
+      --shadow-soft: 0 10px 30px -8px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
+    }
 
-        header { position: sticky; top: 0; z-index: 100; background: rgba(248, 248, 246, 0.92); backdrop-filter: blur(14px); border-bottom: 1px solid var(--border-light); padding: 16px 6%; display: flex; justify-content: space-between; align-items: center; }
-        .logo-wrap { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--text-main); }
-        .logo-icon { width: 38px; height: 38px; background: #141414; color: var(--gold-accent); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .logo-text { font-family: 'Amiri', serif; font-size: 28px; font-weight: 700; }
-        .cart-trigger { background: #FFF; border: 1px solid var(--border-light); padding: 8px 18px; border-radius: 30px; display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 700; cursor: pointer; box-shadow: var(--shadow-soft); transition: 0.2s; }
-        .cart-trigger:hover { transform: translateY(-1px); border-color: rgba(0,0,0,0.15); }
-        .cart-count { background: #141414; color: #FFF; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Tajawal', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        .hero-section { text-align: center; padding: 50px 20px 30px; max-width: 800px; margin: 0 auto; }
-        .hero-tag { display: inline-block; background: rgba(197, 168, 128, 0.15); color: #8A6D3B; font-size: 13px; font-weight: 700; padding: 5px 16px; border-radius: 30px; margin-bottom: 14px; }
-        .hero-title { font-family: 'Amiri', serif; font-size: 44px; color: #141414; margin-bottom: 12px; }
-        .hero-desc { color: var(--text-muted); font-size: 16px; max-width: 580px; margin: 0 auto 30px; }
+    body {
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
 
-        .filters-bar { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px; padding: 0 15px; }
-        .filter-btn { background: #FFFFFF; border: 1px solid var(--border-light); padding: 9px 22px; border-radius: 30px; font-size: 14px; font-weight: 700; cursor: pointer; color: var(--text-muted); transition: 0.25s; }
-        .filter-btn.active, .filter-btn:hover { background: #141414; color: #FFFFFF; border-color: #141414; }
+    /* 1. الشريط الإعلاني العلوي المتحرك */
+    .top-ticker {
+      background-color: #141414;
+      color: #FAF5EE;
+      overflow: hidden;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid rgba(197, 168, 128, 0.2);
+    }
 
-        .products-grid { max-width: 1200px; margin: 0 auto 70px; padding: 0 20px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 26px; }
-        .product-card { background: var(--card-bg); border-radius: var(--radius-main); border: 1px solid var(--border-light); box-shadow: var(--shadow-soft); padding: 18px; transition: 0.35s ease; display: flex; flex-direction: column; position: relative; }
-        .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-        .card-badge { position: absolute; top: 26px; right: 26px; background: rgba(20, 20, 20, 0.85); backdrop-filter: blur(8px); color: #FFF; font-size: 11px; font-weight: 700; padding: 5px 12px; border-radius: 20px; z-index: 2; }
+    .ticker-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+    }
 
-        .image-container { width: 100%; height: 260px; background: #F1F1ED; border-radius: 14px; display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 16px; }
-        .misbaha-graphic { width: 180px; height: 210px; transition: 0.4s ease; filter: drop-shadow(0 14px 12px rgba(0, 0, 0, 0.12)); }
-        .product-card:hover .misbaha-graphic { transform: scale(1.05) rotate(-2deg); }
+    .ticker-item {
+      padding: 0 30px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .product-category { font-size: 12px; font-weight: 700; color: #8A6D3B; margin-bottom: 4px; }
-        .product-title { font-size: 17px; font-weight: 700; margin-bottom: 8px; }
-        .specs-pills { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
-        .spec-pill { background: #F4F4F2; color: #555; font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 6px; }
-        .price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px; }
-        .current-price { font-size: 21px; font-weight: 900; color: #141414; }
-        .old-price { font-size: 14px; color: var(--text-muted); text-decoration: line-through; }
-        
-        .card-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; }
-        .btn-add-cart { background: #FFFFFF; color: #141414; border: 1.5px solid #141414; padding: 11px; border-radius: 12px; font-size: 13.5px; font-weight: 700; cursor: pointer; transition: 0
+    .ticker-bullet {
+      color: var(--gold-accent);
+      font-size: 10px;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(50%); }
+    }
+
+    /* 2. الهيدر وشريط التنقل */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(248, 248, 246, 0.9);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 18px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+    .logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: #141414;
+      color: var(--gold-accent);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-text {
+      font-family: 'Amiri', serif;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-trigger {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 8px 16px;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+      transition: all 0.2s ease;
+    }
+
+    .cart-trigger:hover {
+      border-color: rgba(0,0,0,0.15);
+      transform: translateY(-1px);
+    }
+
+    .cart-count {
+      background: #141414;
+      color: #FFF;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+    }
+
+    /* 3. الهيرو سكشن التعريفي */
+    .hero-section {
+      text-align: center;
+      padding: 50px 20px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(197, 168, 128, 0.15);
+      color: #8A6D3B;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-title {
+      font-family: 'Amiri', serif;
+      font-size: 42px;
+      font-weight: 700;
+      color: #141414;
+      line-height: 1.25;
+      margin-bottom: 14px;
+    }
+
+    .hero-desc {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 580px;
+      margin: 0 auto 30px;
+      font-weight: 400;
+    }
+
+    /* 4. أزرار فلتر الألوان */
+    .filters-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+      padding: 0 15px;
+    }
+
+    .filter-btn {
+      background: #FFFFFF;
+      border: 1px solid var(--border-light);
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.25s ease;
+    }
+
+    .filter-btn.active, 
+    .filter-btn:hover {
+      background: #141414;
+      color: #FFFFFF;
+      border-color: #141414;
+    }
+
+    /* 5. شبكة بطاقات المنتجات */
+    .products-grid {
+      max-width: 1200px;
+      margin: 0 auto 70px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-main);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-soft);
+      padding: 16px;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(0, 0, 0, 0.08);
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 26px;
+      right: 26px;
+      background: rgba(20, 20, 20, 0.85);
+      backdrop-filter: blur(8px);
+      color: #FFFFFF;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      z-index: 2;
+    }
+
+    .image-container {
+      width: 100%;
+      height: 270px;
+      background: #F1F1ED;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 16px;
+    }
+
+    .misbaha-graphic {
+      width: 180px;
+      height: 220px;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.12));
+    }
+
+    .product-card:hover .misbaha-graphic {
+      transform: scale(1.05) rotate(-2deg);
+    }
+
+    .product-info {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .product-category {
+      font-size: 12px;
+      font-weight: 600;
+      color: #8A6D3B;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    .product-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .specs-pills {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .spec-pill {
+      background: #F4F4F2;
+      color: #555;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .current-price {
+      font-size: 20px;
+      font-weight: 900;
+      color: #141414;
+    }
+
+    .old-price {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    .currency {
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+
+    .btn-order-whatsapp {
+      flex: 1;
+      background: #141414;
+      color: #FFFFFF;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-order-whatsapp:hover {
+      background: #2E2E2E;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-add-cart {
+      width: 44px;
+      height: 44px;
+      background: #F8F8F6;
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      transition: all 0.2s ease;
+    }
+
+    .btn-add-cart:hover {
+      background: #EAEAE6;
+      border-color: rgba(0,0,0,0.15);
+    }
+
+    /* 6. شريط مميزات المتجر */
+    .features-strip {
+      background: #FFFFFF;
+      border-top: 1px solid var(--border-light);
+      border-bottom: 1px solid var(--border-light);
+      padding: 40px 20px;
+      margin-bottom: 60px;
+    }
+
+    .features-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .feature-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .feature-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* 7. الفوتر */
+    footer {
+      background-color: #141414;
+      color: #A3A3A3;
+      padding: 50px 20px 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .footer-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-wrap { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+      .hero-title { font-size: 32px; }
+    }
+
+    .footer-brand h3 {
+      font-family: 'Amiri', serif;
+      font-size: 26px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 380px;
+    }
+
+    .footer-links h4 {
+      color: #FFFFFF;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #A3A3A3;
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-accent);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 25px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .payment-icons {
+      display: flex;
+      gap: 10px;
+      font-size: 13px;
+      color: #FFF;
+    }
+
+    .payment-pill {
+      background: rgba(255,255,255,0.08);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+    }
+
+    /* 8. نافذة السلة الجانبية (Cart Drawer) */
+    .cart-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 380px;
+      max-width: 85%;
+      height: 100%;
+      background: #FFFFFF;
+      z-index: 1001;
+      transform: translateX(-100%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cart-drawer.open {
+      transform: translateX(0);
+    }
+
+    .cart-drawer-overlay.open {
+      display: block;
+      opacity: 1;
+    }
+
+    .drawer-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-light);
+      margin-bottom: 20px;
+    }
+
+    .drawer-header h3 {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .close-drawer {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items-list {
+      flex-grow: 1;
+      overflow-y: auto;
+    }
+
+    .cart-empty {
+      text-align: center;
+      color: var(--text-muted);
+      margin-top: 50px;
+      font-size: 15px;
+    }
+
+    .cart-footer {
+      padding-top: 16px;
+      border-top: 1px solid var(--border-light);
+    }
+
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .btn-checkout {
+      width: 100%;
+      background: #141414;
+      color: #FFF;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-checkout:hover {
+      background: #2E2E2E;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. شريط الإعلانات التفاعلي -->
+  <div class="top-ticker">
+    <div class="ticker-track">
+      <div class="ticker-item">✨ خامة بكلايت بلجيكي صب أصلي ورنة مميزة</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🎁 علبة إهداء خشبية فاخرة مجاناً مع كل طلب</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🚚 شحن سريع لكافة مناطق المملكة والخليج</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🛡️ ضمان فحص الخامة واسترجاع فوري</div>
+      <div class="ticker-bullet">✦</div>
+      <!-- تكرار للحركة الانسيابية -->
+      <div class="ticker-item">✨ خامة بكلايت بلجيكي صب أصلي ورنة مميزة</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🎁 علبة إهداء خشبية فاخرة مجاناً مع كل طلب</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🚚 شحن سريع لكافة مناطق المملكة والخليج</div>
+      <div class="ticker-bullet">✦</div>
+      <div class="ticker-item">🛡️ ضمان فحص الخامة واسترجاع فوري</div>
+    </div>
+  </div>
+
+  <!-- 2. الهيدر -->
+  <header>
+    <a href="#" class="logo-wrap">
+      <div class="logo-icon">📿</div>
+      <span class="logo-text">أثـيـر</span>
+    </a>
+    <div class="header-actions">
+      <div class="cart-trigger" onclick="toggleCart()">
+        <span>السلة</span>
+        <span class="cart-count" id="cartCount">0</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 3. الهيرو سكشن -->
+  <section class="hero-section">
+    <div class="hero-tag">تشكيلة السبح الملكية 2026</div>
+    <h1 class="hero-title">فخامة البكلايت البلجيكي الأصيل</h1>
+    <p class="hero-desc">خامات صب فاخرة بملمس حريري ورنة ناعمة تطرب أصحاب الذوق الرفيع. كركوشة تفصيل يدوي وعلبة إهداء فخمة تليق بك وبأحبابك.</p>
+
+    <!-- أزرار الفلتر -->
+    <div class="filters-bar">
+      <button class="filter-btn active" onclick="filterColor('all')">جميع الألوان</button>
+      <button class="filter-btn" onclick="filterColor('cherry')">دم الغزال (كرزي)</button>
+      <button class="filter-btn" onclick="filterColor('amber')">عسلي (كهرماني)</button>
+      <button class="filter-btn" onclick="filterColor('petrol')">أزرق بترولي</button>
+      <button class="filter-btn" onclick="filterColor('emerald')">أخضر زمردي</button>
+      <button class="filter-btn" onclick="filterColor('black')">أسود ملكي</button>
+    </div>
+  </section>
+
+  <!-- 4. شبكة المنتجات -->
+  <main class="products-grid" id="productsGrid"></main>
+
+  <!-- 5. شريط مميزات المتجر -->
+  <section class="features-strip">
+    <div class="features-wrap">
+      <div class="feature-item">
+        <div class="feature-icon">💎</div>
+        <div class="feature-title">بكلايت بلجيكي نخب أول</div>
+        <div class="feature-sub">خراطة دقيقة ولمعة تدوم للأبد</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎁</div>
+        <div class="feature-title">تغليف إهداء فاخر</div>
+        <div class="feature-sub">علبة هاردبوكس مبطنة مع كرت إهداء</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">توصيل سريع</div>
+        <div class="feature-sub">خلال 24-48 ساعة داخل المملكة</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🛡️</div>
+        <div class="feature-title">ضمان ذهبي</div>
+        <div class="feature-sub">حق المعاينة والفحص عند الاستلام</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. الفوتر -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-brand">
+        <h3>أثـيـر للسبح الفاخرة</h3>
+        <p>وجهتكم الأولى لاقتناء أرقى سبح البكلايت، الفاتوران، والمستكة المصنوعة بأيدي أمهر الخراطين لتناسب أصحاب الهيبة والذوق الرفيع.</p>
+      </div>
+      <div class="footer-links">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#">جميع السبح</a></li>
+          <li><a href="#">العروض الخاصة</a></li>
+          <li><a href="#">سياسة الاسترجاع والضمان</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>خدمة العملاء</h4>
+        <ul>
+          <li><a href="#">تواصل عبر الواتساب</a></li>
+          <li><a href="#">تتبع الشحنة</a></li>
+          <li><a href="#">الأسئلة الشائعة</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>جميع الحقوق محفوظة © أثير 2026</div>
+      <div class="payment-icons">
+        <span class="payment-pill">مدى Mada</span>
+        <span class="payment-pill">Apple Pay</span>
+        <span class="payment-pill">تمارا Tamara</span>
+        <span class="payment-pill">تابي Tabby</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- سلة المشتريات المنبثقة -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="drawer-header">
+      <h3>سلة المشتريات</h3>
+      <button class="close-drawer" onclick="toggleCart()">×</button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="cart-empty">السلة فارغة حالياً</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>المجموع:</span>
+        <span id="cartTotal">0 ر.س</span>
+      </div>
+      <button class="btn-checkout" onclick="checkoutWhatsApp()">إتمام الطلب عبر الواتساب</button>
+    </div>
+  </div>
+
+  <!-- جافاسكريبت التحكم التفاعلي -->
+  <script>
+    // مصفوفة المنتجات
+    const products = [
+      {
+        id: 1,
+        name: "سبحة بكلايت ملكي - قصة برميلية",
+        category: "cherry",
+        categoryName: "دم الغزال (كرزي)",
+        price: 185,
+        oldPrice: 240,
+        beadsCount: 45,
+        beadSize: "10 * 10 ملم",
+        beadColorFill: "#8B1E2D",
+        beadStroke: "#5E111C",
+        tasselColor: "#C5A880",
+        badge: "الأكثر طلباً 🔥"
+      },
+      {
+        id: 2,
+        name: "سبحة بكلايت شفاف - أزرق بترولي",
+        category: "petrol",
+        categoryName: "أزرق بترولي",
+        price: 195,
+        oldPrice: 260,
+        beadsCount: 51,
+        beadSize: "9.5 * 11 ملم",
+        beadColorFill: "#1B3B52",
+        beadStroke: "#0F2433",
+        tasselColor: "#D1D5DB",
+        badge: "إصدار محدود"
+      },
+      {
+        id: 3,
+        name: "سبحة بكلايت عسلي معرق - طراز كهرمان",
+        category: "amber",
+        categoryName: "عسلي كهرماني",
+        price: 210,
+        oldPrice: 280,
+        beadsCount: 33,
+        beadSize: "11 * 13 ملم",
+        beadColorFill: "#D99B26",
+        beadStroke: "#8C5E0D",
+        tasselColor: "#A17523",
+        badge: "رنة ناعمة ✦"
+      },
+      {
+        id: 4,
+        name: "سبحة بكلايت زيتي - أخضر زمردي",
+        category: "emerald",
+        categoryName: "أخضر زمردي",
+        price: 175,
+        oldPrice: 230,
+        beadsCount: 45,
+        beadSize: "10 * 10 ملم",
+        beadColorFill: "#1D4732",
+        beadStroke: "#0D2619",
+        tasselColor: "#C5A880",
+        badge: "خامة بلجيكي"
+      },
+      {
+        id: 5,
+        name: "سبحة بكلايت أسود كربوني - طربزونة فضة",
+        category: "black",
+        categoryName: "أسود ملكي",
+        price: 230,
+        oldPrice: 310,
+        beadsCount: 33,
+        beadSize: "12 * 12 ملم",
+        beadColorFill: "#1C1C1E",
+        beadStroke: "#000000",
+        tasselColor: "#E5E7EB",
+        badge: "فضة 925"
+      },
+      {
+        id: 6,
+        name: "سبحة بكلايت كرزي غامق - ملمس حريري",
+        category: "cherry",
+        categoryName: "دم الغزال (كرزي)",
+        price: 165,
+        oldPrice: 215,
+        beadsCount: 45,
+        beadSize: "9 * 11 ملم",
+        beadColorFill: "#5C131E",
+        beadStroke: "#380910",
+        tasselColor: "#C5A880",
+        badge: "صب قديم"
+      }
+    ];
+
+    let cart = [];
+
+    // رسم السبحة بتقنية SVG لتغيير الألوان بدقة وبشكل فوري
+    function generateMisbahaSVG(fillColor, strokeColor, tasselColor) {
+      return `
+        <svg class="misbaha-graphic" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M100 25 C60 25 35 75 35 110 C35 155 70 180 100 180 C130 180 165 155 165 110 C165 75 140 25 100 25 Z" 
+                stroke="#888888" stroke-width="2" stroke-dasharray="2 2" fill="none" opacity="0.3" />
+          <g>
+            <circle cx="100" cy="30" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="80" cy="35" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="120" cy="35" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="63" cy="48" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="137" cy="48" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="50" cy="67" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="150" cy="67" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="42" cy="90" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="158" cy="90" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="40" cy="115" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="160" cy="115" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="45" cy="140" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="155" cy="140" r="9" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="60" cy="160" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="140" cy="160" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="80" cy="173" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <circle cx="120" cy="173" r="8.5" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <rect x="94" y="174" width="12" height="24" rx="4" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+            <polygon points="100,198 94,208 106,208" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1"/>
+          </g>
+          <circle cx="98" cy="28" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+          <circle cx="78" cy="33" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+          <circle cx="118" cy="33" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+          <circle cx="40" cy="88" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+          <circle cx="156" cy="88" r="2.5" fill="#FFFFFF" opacity="0.5"/>
+          <path d="M100 208 L100 216" stroke="${tasselColor}" stroke-width="3" stroke-linecap="round"/>
+          <path d="M96 216 L100 236 L104 216 Z" fill="${tasselColor}"/>
+          <line x1="97" y1="236" x2="94" y2="248" stroke="${tasselColor}" stroke-width="1.5"/>
+          <line x1="100" y1="236" x2="100" y2="250" stroke="${tasselColor}" stroke-width="1.5"/>
+          <line x1="103" y1="236" x2="106" y2="248" stroke="${tasselColor}" stroke-width="1.5"/>
+        </svg>
+      `;
+    }
+
+    // عرض بطاقات المنتجات
+    function renderProducts(items) {
+      const grid = document.getElementById("productsGrid");
+      grid.innerHTML = items.map(p => `
+        <div class="product-card" data-category="${p.category}">
+          <span class="card-badge">${p.badge}</span>
+          <div class="image-container">
+            ${generateMisbahaSVG(p.beadColorFill, p.beadStroke, p.tasselColor)}
+          </div>
+          <div class="product-info">
+            <span class="product-category">${p.categoryName}</span>
+            <h3 class="product-title">${p.name}</h3>
+            <div class="specs-pills">
+              <span class="spec-pill">عدد الخرز: ${p.beadsCount}</span>
+              <span class="spec-pill">المقاس: ${p.beadSize}</span>
+              <span class="spec-pill">خراطة يد</span>
+            </div>
+            <div class="price-row">
+              <span class="current-price">${p.price} <span class="currency">ر.س</span></span>
+              <span class="old-price">${p.oldPrice} ر.س</span>
+            </div>
+            <div class="card-actions">
+              <a href="https://wa.me/966500000000?text=${encodeURIComponent('السلام عليكم، أرغب بطلب: ' + p.name + ' بسعر ' + p.price + ' ر.س')}" 
+                 target="_blank" class="btn-order-whatsapp">
+                <span>طلب واتساب سريع</span>
+              </a>
+              <button class="btn-add-cart" onclick="addToCart(${p.id})" title="أضف للسلة">🛒</button>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // فلترة الألوان
+    function filterColor(category) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (typeof event !== 'undefined' && event && event.target) {
+        event.target.classList.add('active');
+      }
+
+      if (category === 'all') {
+        renderProducts(products);
+      } else {
+        const filtered = products.filter(p => p.category === category);
+        renderProducts(filtered);
+      }
+    }
+
+    // إدارة السلة
+    function addToCart(productId) {
+      const item = products.find(p => p.id === productId);
+      cart.push(item);
+      updateCartUI();
+      toggleCart();
+    }
+
+    function updateCartUI() {
+      document.getElementById('cartCount').innerText = cart.length;
+      const list = document.getElementById('cartItemsList');
+
+      if (cart.length === 0) {
+        list.innerHTML = '<div class="cart-empty">السلة فارغة حالياً</div>';
+        document.getElementById('cartTotal').innerText = '0 ر.س';
+        return;
+      }
+
+      let total = 0;
+      list.innerHTML = cart.map((item, index) => {
+        total += item.price;
+        return `
+          <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 0; border-bottom:1px solid #eee;">
+            <div>
+              <div style="font-weight:700; font-size:14px;">${item.name}</div>
+              <div style="font-size:13px; color:#888;">${item.price} ر.س</div>
+            </div>
+            <button onclick="removeFromCart(${index})" style="background:none; border:none; color:red; cursor:pointer; font-size:16px;">🗑️</button>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartTotal').innerText = total + ' ر.س';
+    }
+
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      const drawer = document.getElementById('cartDrawer');
+      const overlay = document.getElementById('cartOverlay');
+      drawer.classList.toggle('open');
+      overlay.classList.toggle('open');
+    }
+
+    function checkoutWhatsApp() {
+      if (cart.length === 0) {
+        alert('سلتك فارغة!');
+        return;
+      }
+      let text = 'السلام عليكم، أرغب بإتمام طلب السبح التالية:\n';
+      let total = 0;
+      cart.forEach((item, i) => {
+        text += `${i+1}. ${item.name} (${item.price} ر.س)\n`;
+        total += item.price;
+      });
+      text += `\nالمجموع الإجمالي: ${total} ر.س\nالشحن إلى مدينة: `;
+      // استبدل 966500000000 برقم الواتساب الخاص بك
+      window.open('https://wa.me/966500000000?text=' + encodeURIComponent(text), '_blank');
+    }
+
+    // التشغيل الأولي
+    renderProducts(products);
+  </script>
+</body>
+</html>
