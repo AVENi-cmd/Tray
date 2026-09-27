@@ -3,68 +3,101 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>رُكن المعدات | تأجير معدات البناء</title>
+<title>ساحة | تأجير معدات البناء</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#202a35;background:#f5f7fa}
-header{background:#172b3a;color:white;padding:18px 7%;display:flex;justify-content:space-between;align-items:center}
-.logo{font-size:22px;font-weight:bold;color:#ffbd45}header a{color:white;text-decoration:none;margin-right:18px}
-.hero{padding:55px 7%;background:#20394b;color:white}.hero h1{font-size:36px;margin:0 0 12px}.hero p{color:#d7e0e7}
-main{padding:30px 7%}.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
-input,select{padding:12px;border:1px solid #ccd3da;border-radius:8px;font-size:15px;background:white}
-input{flex:1;min-width:200px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
-.card{background:white;border-radius:12px;padding:20px;box-shadow:0 3px 12px #142b3a12}
-.icon{font-size:40px}.tag{color:#687783;font-size:14px}.price{font-size:20px;font-weight:bold;margin:14px 0}
-button{background:#e99b16;color:#172b3a;border:0;padding:11px 16px;border-radius:7px;font-weight:bold;cursor:pointer}
-footer{text-align:center;padding:25px;color:#687783}
+:root{--dark:#182b3b;--gold:#f3ac32;--bg:#f5f7f9}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:var(--bg);color:#263442}
+header{background:var(--dark);color:white;padding:16px 7%;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:23px;font-weight:bold;color:var(--gold)}nav a{color:white;text-decoration:none;margin:0 10px}
+.hero{padding:55px 8%;background:linear-gradient(110deg,#182b3b,#31556a);color:white}
+.hero h1{font-size:38px;margin:0 0 12px}.hero p{color:#d9e2e8;line-height:1.8}
+button{border:0;border-radius:8px;padding:12px 18px;background:var(--gold);font-weight:bold;cursor:pointer}
+main{padding:30px 7%}.filters{display:flex;gap:10px;margin:18px 0;flex-wrap:wrap}
+input,select{padding:12px;border:1px solid #d1d8de;border-radius:8px;font-size:15px}
+#search{flex:1;min-width:190px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:white;padding:20px;border-radius:12px;box-shadow:0 4px 15px #182b3b12}
+.icon{font-size:42px}.muted{color:#73808a;font-size:14px}.price{font-size:20px;font-weight:bold;margin:16px 0}
+.card button{width:100%}.empty{padding:20px}
+dialog{border:0;border-radius:14px;width:min(480px,92%);padding:25px;box-shadow:0 10px 40px #0005}
+dialog::backdrop{background:#10202dcc}dialog form{display:grid;gap:12px}
+dialog input,dialog select{width:100%}.actions{display:flex;gap:10px}
+.secondary{background:#e7ebee}
+footer{text-align:center;padding:25px;color:#71808a}
+@media(max-width:600px){nav a{margin:0 4px;font-size:13px}.hero h1{font-size:29px}}
 </style>
 </head>
 <body>
 <header>
-  <div class="logo">رُكن المعدات</div>
-  <nav><a href="#">الرئيسية</a><a href="#معداتنا">المعدات</a><a href="tel:+966500000000">اتصل بنا</a></nav>
+  <div class="logo">ساحة للمعدات</div>
+  <nav><a href="#">الرئيسية</a><a href="#equipment">المعدات</a><a href="#contact">التواصل</a></nav>
 </header>
 
 <section class="hero">
-  <h1>معداتك لموقع البناء، في وقتها</h1>
-  <p>استأجر معدات موثوقة باليوم أو الأسبوع أو الشهر.</p>
-  <a href="#معداتنا"><button>استعرض المعدات</button></a>
+  <h1>معدات البناء لمشروعك</h1>
+  <p>استأجر المعدات المناسبة باليوم أو الأسبوع أو الشهر.<br>اختر المعدة، أرسل طلبك، وسنتواصل معك.</p>
+  <a href="#equipment"><button>تصفح المعدات</button></a>
 </section>
 
-<main id="معداتنا">
+<main id="equipment">
   <h2>المعدات المتاحة</h2>
-  <div class="tools">
+  <div class="filters">
     <input id="search" placeholder="ابحث عن معدة...">
-    <select id="period">
-      <option value="day">يومي</option>
-      <option value="week">أسبوعي</option>
-      <option value="month">شهري</option>
-    </select>
-    <select id="category">
-      <option value="الكل">كل التصنيفات</option>
-      <option value="الحفر">الحفر</option>
-      <option value="الرفع">الرفع</option>
-      <option value="الطاقة">الطاقة</option>
-      <option value="الخرسانة">الخرسانة</option>
-    </select>
+    <select id="category"><option value="">كل الأنواع</option><option>الحفر</option><option>الرفع</option><option>الطاقة</option><option>الخرسانة</option></select>
+    <select id="period"><option value="day">السعر اليومي</option><option value="week">السعر الأسبوعي</option><option value="month">السعر الشهري</option></select>
   </div>
-  <div class="grid" id="list"></div>
+  <div class="grid" id="cards"></div>
 </main>
 
-<footer>© 2026 رُكن المعدات — الأسعار المعروضة تقديرية</footer>
+<footer id="contact">للتواصل: 0500000000 · المدينة: أضف مدينتك</footer>
+
+<dialog id="booking">
+  <h2>طلب تأجير</h2>
+  <form id="form">
+    <input id="item" readonly>
+    <input id="name" placeholder="اسم العميل" required>
+    <input id="phone" type="tel" placeholder="رقم الجوال" required>
+    <label>تاريخ بداية الإيجار<input id="start" type="date" required></label>
+    <input id="days" type="number" min="1" value="1" required placeholder="عدد الأيام">
+    <div id="estimate" class="muted"></div>
+    <div class="actions"><button type="submit">إرسال الطلب التجريبي</button><button type="button" class="secondary" onclick="booking.close()">إغلاق</button></div>
+  </form>
+</dialog>
 
 <script>
-const equipment=[
- \{name:"حفار هيدروليكي",cat:"الحفر",icon:"🚜",day:900,week:5200,month:18000\},
- \{name:"شيول (لودر)",cat:"الحفر",icon:"🚜",day:750,week:4300,month:15000\},
- \{name:"بلدوزر",cat:"الحفر",icon:"🚧",day:1200,week:7000,month:24000\},
- \{name:"رافعة شوكية",cat:"الرفع",icon:"🏗️",day:450,week:2600,month:9000\},
- \{name:"رافعة متحركة",cat:"الرفع",icon:"🏗️",day:1500,week:9000,month:32000\},
- \{name:"رافعة مقصية",cat:"الرفع",icon:"⬆️",day:350,week:2000,month:7000\},
- \{name:"مولد كهربائي",cat:"الطاقة",icon:"🔌",day:250,week:1400,month:4800\},
- \{name:"كمبروسر هواء",cat:"الطاقة",icon:"⚙️",day:180,week:1000,month:3500\},
- \{name:"خلاطة خرسانة",cat:"الخرسانة",icon:"🛠️",day:120,week:650,month:2200\},
- \{name:"مدحلة طرق",cat:"الحفر",icon:"🚜",day:650,week:3800,month:13000\}
+const items=[
+["حفار هيدروليكي","الحفر","🚜",900,5200,18000],
+["شيول (لودر)","الحفر","🚜",750,4300,15000],
+["بلدوزر","الحفر","🚧",1200,7000,24000],
+["رافعة شوكية","الرفع","🏗️",450,2600,9000],
+["رافعة متحركة","الرفع","🏗️",1500,9000,32000],
+["رافعة مقصية","الرفع","⬆️",350,2000,7000],
+["مولد كهربائي","الطاقة","⚡",250,1400,4800],
+["كمبروسر هواء","الطاقة","⚙️",180,1000,3500],
+["خلاطة خرسانة","الخرسانة","🛠️",120,650,2200],
+["مدحلة طرق","الحفر","🚜",650,3800,13000]
 ];
-const list=document.querySelector("#list");
+const cards=document.querySelector("#cards"), period=document.querySelector("#period");
+const rates={day:3,week:4,month:5};
 function render(){
- const q=document.querySelector("#search").value.trim().toLower
+ const q=document.querySelector("#search").value.toLowerCase(),cat=document.querySelector("#category").value,p=period.value;
+ const matches=items.filter(x=>x[0].toLowerCase().includes(q)&&(!cat||x[1]===cat));
+ cards.innerHTML=matches.length?matches.map(x=>`<article class="card">
+ <div class="icon">${x[2]}</div><h3>${x[0]}</h3><div class="muted">${x[1]} · متاحة للتأجير</div>
+ <div class="price">${x[rates[p]].toLocaleString("ar-SA")} ريال / ${p==="day"?"يوم":p==="week"?"أسبوع":"شهر"}</div>
+ <button onclick="openForm('${x[0]}')">اطلب المعدة</button></article>`).join(""):'<p class="empty">لا توجد نتائج مطابقة.</p>';
+}
+function openForm(name){document.querySelector("#item").value=name;booking.showModal();calc()}
+function calc(){
+ const x=items.find(i=>i[0]===document.querySelector("#item").value);
+ const days=+document.querySelector("#days").value||1;
+ if(x)document.querySelector("#estimate").textContent="المبلغ التقديري: "+(x[3]*days).toLocaleString("ar-SA")+" ريال (على السعر اليومي)";
+}
+document.querySelectorAll("#search,#category,#period").forEach(e=>e.addEventListener("input",render));
+document.querySelector("#days").addEventListener("input",calc);
+document.querySelector("#form").addEventListener("submit",e=>{
+ e.preventDefault();alert("تم تسجيل الطلب للتجربة. اربط النموذج بخادم لحفظ الطلبات.");booking.close();
+});
+render();
+</script>
+</body>
+</html>
